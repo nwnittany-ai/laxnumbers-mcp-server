@@ -20,7 +20,7 @@ export function createServer(): McpServer {
     "Get Oregon Boys HS lacrosse team rankings from laxnumbers.com",
     {
       year: z
-        .number()
+        .coerce.number()
         .int()
         .min(2000)
         .max(2100)
@@ -71,7 +71,7 @@ export function createServer(): McpServer {
         .min(1)
         .describe("Team name or partial name to search for (case-insensitive)"),
       year: z
-        .number()
+        .coerce.number()
         .int()
         .min(2000)
         .max(2100)
